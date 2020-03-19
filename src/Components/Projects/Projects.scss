@@ -12,6 +12,9 @@
   background: #263238;
   height: 350px;
   position: relative;
+  &:hover &__Thumbnail {
+    transform: scale(1.05);
+  }
   &__Background {
     width: 100%;
     height: 100%;
@@ -39,6 +42,7 @@
     bottom: 0;
     margin: auto;
     width: 60%;
+    transition: all 0.6s ease;
   }
   &__TitleHolder {
     position: absolute;
