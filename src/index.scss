@@ -1,0 +1,31 @@
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+}
+
+.Title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: justify;
+  color: #263238;
+  &--Centered {
+    text-align: center;
+  }
+}
+
+.Text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  &--Centered {
+    text-align: center;
+  }
+  &--Primary {
+    color: #333;
+  }
+}

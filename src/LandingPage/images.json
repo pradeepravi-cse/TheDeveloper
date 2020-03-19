@@ -1,0 +1,62 @@
+[
+  {
+    "imageName": "Adobe Illustrator",
+    "image": "illustrator-gray",
+    "imageHover": "illustrator-color"
+  },
+  {
+    "imageName": "Adobe Photoshop",
+    "image": "photoshop-gray",
+    "imageHover": "photoshop-color"
+  },
+  {
+    "imageName": "Figma",
+    "image": "figma-gray",
+    "imageHover": "figma-color"
+  },
+  {
+    "imageName": "Adobe XD",
+    "image": "xd-gray",
+    "imageHover": "xd-color"
+  },
+  {
+    "imageName": "React Js",
+    "image": "react-gray",
+    "imageHover": "react-color"
+  },
+  {
+    "imageName": "Angular",
+    "image": "angular-gray",
+    "imageHover": "angular-color"
+  },
+  {
+    "imageName": "NodeJs",
+    "image": "nodejs-gray",
+    "imageHover": "nodejs-color"
+  },
+  {
+    "imageName": "MongoDb",
+    "image": "mongodb-gray",
+    "imageHover": "mongodb-color"
+  },
+  {
+    "imageName": "MySql",
+    "image": "mysql-gray",
+    "imageHover": "mysql-color"
+  },
+  {
+    "imageName": "Javascript",
+    "image": "javascript-gray",
+    "imageHover": "javascript-color"
+  },
+  {
+    "imageName": "HTML",
+    "image": "html-gray",
+    "imageHover": "html-color"
+  },
+  {
+    "imageName": "CSS3",
+    "image": "css3-gray",
+    "imageHover": "css3-color"
+  }
+]

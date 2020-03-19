@@ -1,0 +1,18 @@
+.Navigation {
+  margin: 0 40px;
+  display: flex;
+  padding: 8px;
+  height: 60px;
+  width: 100%;
+  z-index: 9999;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  &__Brand {
+    max-height: 50px;
+    img {
+      max-width: 300px;
+      width: auto;
+    }
+  }
+}

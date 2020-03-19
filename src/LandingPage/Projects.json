@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Minimal Navigation Menu",
+    "tags": ["Web Design", "SPA", "UI/UX"],
+    "detailMode": false,
+    "showInLandingPage": true,
+    "thumbnail": "minimal-navigation"
+  },
+  {
+    "id": 2,
+    "name": "Analyst Dashboard",
+    "tags": ["Web Design", "SPA", "UI/UX"],
+    "detailMode": false,
+    "showInLandingPage": true,
+    "thumbnail": "analyst-dashboard"
+  },
+  {
+    "id": 3,
+    "name": "Remind Me Mobile App",
+    "tags": ["Mobile App", "UI/UX"],
+    "detailMode": false,
+    "showInLandingPage": true,
+    "thumbnail": "remind-me"
+  },
+  {
+    "id": 4,
+    "name": "Alpha Studio",
+    "tags": ["Web Design"],
+    "detailMode": false,
+    "showInLandingPage": true,
+    "thumbnail": "alpha-website"
+  }
+]
