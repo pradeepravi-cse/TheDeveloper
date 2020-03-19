@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "http://pradeepravi-cse.github.io/the-developer",
+  "homepage": "http://pradeepravi-cse.github.io/TheDeveloper",
   "scripts": {
     "start": "parcel ./src/index.html",
     "build": "parcel build ./src/index.html --public-url ./ -d build ",
