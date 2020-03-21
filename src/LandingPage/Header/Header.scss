@@ -25,6 +25,10 @@
     left: 0;
     background-color: rgba(0, 0, 0, 0.8);
   }
+  .Navigation {
+    position: absolute;
+    bottom: 20px;
+  }
 }
 .Intro {
   height: 100vh;
@@ -38,6 +42,7 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #ffffff;
+    text-align: center;
   }
   &__Portfolio {
     font-family: Roboto;
@@ -47,6 +52,7 @@
     line-height: 42px;
     letter-spacing: 0.4em;
     color: #fff;
+    text-align: center;
   }
   &__Name {
     font-family: Roboto;

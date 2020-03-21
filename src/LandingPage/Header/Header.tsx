@@ -19,7 +19,7 @@ export function Header() {
             </div>
           </div>
           <div className="row">
-            <div className="col d-flex justify-content-center align-items-center">
+            <div className="col flex-column flex-md-row d-flex justify-content-center align-items-center">
               <span className="mx-5 Intro__Portfolio">PORTFOLIO</span>
               <span className="mx-5 Intro__Name">PRADEEP KUMAR</span>
             </div>

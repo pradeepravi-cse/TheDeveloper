@@ -10,10 +10,11 @@ interface Props {
 }
 
 export function IconImage({ imageName, image, imageHover }: Props) {
+  const windowSize = window.innerWidth;
   return (
     <div className="imageWrapper my-5">
       <img
-        src={images[image]}
+        src={windowSize < 768 ? images[imageHover] : images[image]}
         alt={imageName}
         onMouseOver={e => (e.currentTarget.src = images[imageHover])}
         onMouseLeave={e => (e.currentTarget.src = images[image])}

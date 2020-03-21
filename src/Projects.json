@@ -3,9 +3,31 @@
     "id": 1,
     "name": "Minimal Navigation Menu",
     "tags": ["Web Design", "SPA", "UI/UX"],
-    "detailMode": false,
+    "detailMode": true,
     "showInLandingPage": true,
-    "thumbnail": "minimal-navigation"
+    "thumbnail": "minimal-navigation",
+    "detailedContent": [
+      {
+        "type": "image",
+        "title": "",
+        "content": "minimal-navigation-analysis"
+      },
+      {
+        "type": "image",
+        "title": "",
+        "content": "minimal-navigation-specification"
+      },
+      {
+        "type": "image",
+        "title": "",
+        "content": "minimal-navigation-menulayout"
+      },
+      {
+        "type": "image",
+        "title": "",
+        "content": "minimal-navitaion-searchfilter"
+      }
+    ]
   },
   {
     "id": 2,
