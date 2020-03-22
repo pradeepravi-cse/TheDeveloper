@@ -21,6 +21,7 @@ interface Project {
   thumbnail: string;
   detailedContent: DetailedContent[];
 }
+
 export function ProjectDetail() {
   const { id } = useParams();
   const history = useHistory();

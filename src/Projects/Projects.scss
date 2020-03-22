@@ -8,6 +8,28 @@
     width: 100% !important;
   }
 }
+.ProjectTags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__Pills {
+    border: 1px solid $primary;
+    color: $text-dark;
+    background: rgba($primary, 0.1);
+    padding: 4px 12px;
+    font-size: 14px;
+    font-family: "Roboto";
+    border-radius: 30px;
+    margin: 0px 15px;
+    cursor: pointer;
+    &--active {
+      background: $primary;
+      color: $text-white;
+    }
+  }
+}
 
 .Project {
   flex-basis: 49%;

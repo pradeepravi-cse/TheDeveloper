@@ -20,7 +20,16 @@ interface props {
   showFeaturedProject: boolean;
 }
 
+type tags = "Web Design" | "SPA" | "UI/UX" | "Mobile App";
+
 export function Projects({ showFeaturedProject }: props) {
+  const [tags, setTags] = React.useState<{ [key in tags]: boolean }>({
+    "Web Design": true,
+    SPA: true,
+    "UI/UX": true,
+    "Mobile App": true
+  });
+
   const projectData: Project[] = JSON.parse(JSON.stringify(projects));
   const history = useHistory();
   const handleClick = (id, left, top) => {
@@ -43,6 +52,15 @@ export function Projects({ showFeaturedProject }: props) {
     history.push(`/projects/${id}`);
   };
   const projectRender = project => {
+    let trueNumber = 0;
+    _.map(project.tags, tag => {
+      if (tags[tag]) {
+        trueNumber += 1;
+      }
+    });
+    if (trueNumber == 0) {
+      return null;
+    }
     return (
       <div
         className={
@@ -67,6 +85,33 @@ export function Projects({ showFeaturedProject }: props) {
       </div>
     );
   };
+  const CheckedAll = _.every(tags);
+
+  const toogleFilter = key => {
+    if (key == "all") {
+      _.map(tags, (value, k) => {
+        setTags(t => {
+          return { ...t, [k]: true };
+        });
+      });
+    } else {
+      if (_.every(tags)) {
+        _.map(tags, (value, k) => {
+          if (k !== key) {
+            console.log(k);
+            setTags(t => {
+              return { ...t, [k]: !tags[k] };
+            });
+          }
+        });
+      } else {
+        setTags(t => {
+          return { ...t, [key]: !tags[key] };
+        });
+      }
+    }
+  };
+
   return (
     <>
       <div className="row mt-5">
@@ -74,6 +119,34 @@ export function Projects({ showFeaturedProject }: props) {
           <h2 className="Title Title--Centered">Featured Projects</h2>
           <div className="ProjectWrapper my-5">
             <div className="ProjectContainer d-flex flex-wrap justify-content-between mx-auto ">
+              <div className="ProjectTags mb-5 mx-auto">
+                <span
+                  className={
+                    CheckedAll
+                      ? "ProjectTags__Pills ProjectTags__Pills--active"
+                      : "ProjectTags__Pills"
+                  }
+                  onClick={() => toogleFilter("all")}
+                >
+                  All
+                </span>
+                {_.map(_.keysIn(tags), (key: string) => (
+                  <span
+                    className={
+                      tags[key]
+                        ? CheckedAll
+                          ? "ProjectTags__Pills"
+                          : "ProjectTags__Pills ProjectTags__Pills--active"
+                        : "ProjectTags__Pills"
+                    }
+                    onClick={() => toogleFilter(key)}
+                    key={key}
+                  >
+                    {key}
+                  </span>
+                ))}
+              </div>
+
               {projectData.map(project => {
                 return showFeaturedProject
                   ? project.showFeaturedProject
