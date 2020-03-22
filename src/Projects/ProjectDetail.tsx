@@ -46,7 +46,10 @@ export function ProjectDetail() {
               return (
                 <div key={content}>
                   {title && <span className="Title">title</span>}{" "}
-                  <img src={images[content]} className="img-fluid" />
+                  <img
+                    src={images[content]}
+                    className="img-fluid ProjectDetail__image"
+                  />
                 </div>
               );
             }

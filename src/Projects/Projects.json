@@ -31,26 +31,55 @@
   },
   {
     "id": 2,
-    "name": "Tekhclique - Branding",
-    "tags": ["Brand Designing", "Web Design", "UI/UX"],
-    "detailMode": false,
+    "name": "Tekhclique Website",
+    "tags": ["Web Design", "UI/UX"],
+    "detailMode": true,
     "showFeaturedProject": true,
-    "thumbnail": "analyst-dashboard"
+    "thumbnail": "tekhclique",
+    "detailedContent": [
+      {
+        "type": "image",
+        "title": "",
+        "content": "tekhclique-website"
+      }
+    ]
   },
   {
     "id": 3,
-    "name": "Remind Me Mobile App",
-    "tags": ["Mobile App", "UI/UX"],
-    "detailMode": false,
+    "name": "Tekhclique Logo Design",
+    "tags": ["Logo Design"],
+    "detailMode": true,
     "showFeaturedProject": true,
-    "thumbnail": "remind-me"
+    "thumbnail": "tekhclique-logo",
+    "detailedContent": [
+      {
+        "type": "image",
+        "title": "",
+        "content": "tekhclique-wallpaper"
+      }
+    ]
   },
   {
     "id": 4,
+    "name": "Remind Me Mobile App",
+    "tags": ["Mobile App", "UI/UX"],
+    "detailMode": false,
+    "showFeaturedProject": false,
+    "thumbnail": "remind-me"
+  },
+  {
+    "id": 5,
     "name": "Alpha Studio",
     "tags": ["Web Design"],
-    "detailMode": false,
+    "detailMode": true,
     "showFeaturedProject": true,
-    "thumbnail": "alpha-website"
+    "thumbnail": "alpha-website",
+    "detailedContent": [
+      {
+        "type": "image",
+        "title": "",
+        "content": "alpha-website-vd"
+      }
+    ]
   }
 ]

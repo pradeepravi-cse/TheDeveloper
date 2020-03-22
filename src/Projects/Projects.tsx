@@ -20,14 +20,15 @@ interface props {
   showFeaturedProject: boolean;
 }
 
-type tags = "Web Design" | "SPA" | "UI/UX" | "Mobile App";
+type tags = "Web Design" | "SPA" | "UI/UX" | "Mobile App" | "Logo Design";
 
 export function Projects({ showFeaturedProject }: props) {
   const [tags, setTags] = React.useState<{ [key in tags]: boolean }>({
     "Web Design": true,
     SPA: true,
     "UI/UX": true,
-    "Mobile App": true
+    "Mobile App": true,
+    "Logo Design": true
   });
 
   const projectData: Project[] = JSON.parse(JSON.stringify(projects));
