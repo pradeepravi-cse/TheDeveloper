@@ -1,3 +1,5 @@
+@import "../../constants.scss";
+
 .Header {
   height: 100vh;
   width: 100vw;
@@ -41,7 +43,7 @@
     text-align: center;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #ffffff;
+    color: $text-white;
     text-align: center;
   }
   &__Portfolio {
@@ -51,7 +53,7 @@
     font-size: 36px;
     line-height: 42px;
     letter-spacing: 0.4em;
-    color: #fff;
+    color: $text-white;
     text-align: center;
   }
   &__Name {
@@ -61,7 +63,7 @@
     font-size: 24px;
     line-height: 28px;
     letter-spacing: 0.5em;
-    color: #ffffff;
+    color: $text-white;
   }
 }
 .ScrollIndicator {
@@ -83,14 +85,14 @@
     width: 12px;
     height: 12px;
     border-radius: 10px;
-    border: 1px solid #fff;
+    border: 1px solid $white;
     animation: dot 3s infinite ease-in-out;
   }
   &::after {
     width: 7px;
     height: 7px;
-    border-right: 1px solid #fff;
-    border-bottom: 1px solid #fff;
+    border-right: 1px solid $white;
+    border-bottom: 1px solid $white;
     transform: rotate(45deg);
     animation: arrow 3s infinite ease-in-out;
     animation-delay: 0.75s;
@@ -104,7 +106,7 @@
       display: block;
       margin: 5px auto;
       border-radius: 10px;
-      border: 1px solid #fff;
+      border: 1px solid $white;
       animation: dot 3s infinite ease-in-out;
     }
     &::before {

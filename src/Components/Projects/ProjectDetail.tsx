@@ -38,6 +38,7 @@ export function ProjectDetail() {
       <NavBar logoDark={true} enableBack={true} backCallBack={goBack} />
       <div className="row mt-5">
         <div className="col">
+          <h1 className="ProjectTitle">{filteredData.name}</h1>
           {_.map(detailedContents, (detailedContent: DetailedContent) => {
             const { title, type, content } = detailedContent;
             if (type == "image") {

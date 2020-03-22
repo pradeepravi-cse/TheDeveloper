@@ -25,7 +25,7 @@ export function LandingPage() {
         <div className="row">
           <div className="col">
             <h2 className="Title Title--Centered">About Me</h2>
-            <p className="Text Text--Primary Text--Centered AboutText mx-auto">
+            <p className="Text Text--Dark Text--Centered AboutText mx-auto">
               Experienced Web Developer. Skilled in React Web development,
               Single Page Applications using various frameworks, Corporate Web
               designing, User centred design (UCD). Strong information
@@ -90,7 +90,7 @@ export function LandingPage() {
         <div className="row mt-5 pt-5">
           <div className="col">
             <h2 className="Title Title--Centered">Let's Talk</h2>
-            <p className="Text Text--Primary Text--Centered AboutText mx-auto">
+            <p className="Text Text--Dark Text--Centered AboutText mx-auto">
               <FontAwesomeIcon icon={faAt} /> pradeepravi.cse@gmail.com <br />{" "}
               <FontAwesomeIcon icon={faMobileAlt} /> +91 88075 45800
             </p>

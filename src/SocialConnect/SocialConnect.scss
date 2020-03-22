@@ -1,3 +1,5 @@
+@import "../constants.scss";
+
 .SocialConnect {
   position: fixed;
   right: 10px;
@@ -13,20 +15,20 @@
   &__Link {
     text-decoration: none;
     margin: 20px 0px;
-    color: #fff;
+    color: $text-white;
     font-size: 18px;
     text-align: center;
     &:hover,
     :active {
       text-decoration: none;
-      color: #fff;
+      color: $text-white;
     }
     &--colored {
-      color: #263238;
+      color: $text-primary;
       &:hover,
       :active {
         text-decoration: none;
-        color: #263238;
+        color: $text-primary;
       }
     }
   }
