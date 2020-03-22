@@ -12,6 +12,9 @@
   background: #263238;
   height: 350px;
   position: relative;
+  &--clickable {
+    cursor: pointer;
+  }
   &:hover &__Thumbnail {
     transform: scale(1.05);
   }

@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+
 import logos from "../assets/images/*.png";
 
 import "./NavBar.scss";
@@ -19,13 +21,13 @@ export function NavBar({ logoDark, enableBack, backCallBack }: props) {
           {<FontAwesomeIcon icon={faArrowLeft} style={{ fontSize: "20px" }} />}
         </span>
       )}
-      <a href="#" className="Navigation__Brand">
+      <Link to="/" className="Navigation__Brand">
         <img
           src={logoDark ? logos["logo-dark"] : logos["logo"]}
           className="img-fluid"
           alt=""
         />
-      </a>
+      </Link>
     </div>
   );
 }

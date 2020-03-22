@@ -16,7 +16,7 @@ import "./LandingPage.scss";
 export function LandingPage() {
   const images = Array.from(jsonImages);
   const projectData = Array.from(projects) as any;
-  console.log(expertise);
+
   return (
     <>
       <Header />

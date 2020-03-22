@@ -36,7 +36,7 @@ export function ProjectDetail() {
   return (
     <div className="ProjectDetail">
       <NavBar logoDark={true} enableBack={true} backCallBack={goBack} />
-      <div className="row">
+      <div className="row mt-5">
         <div className="col">
           {_.map(detailedContents, (detailedContent: DetailedContent) => {
             const { title, type, content } = detailedContent;

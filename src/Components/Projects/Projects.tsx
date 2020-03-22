@@ -50,7 +50,18 @@ export function Projects({ projectData }: props) {
             <div className="ProjectContainer d-flex flex-wrap justify-content-between mx-auto ">
               {projectData.map(project => {
                 return project.showInLandingPage ? (
-                  <div className="Project mb-3" key={project.id}>
+                  <div
+                    className={
+                      project.detailMode
+                        ? "Project Project--clickable mb-3"
+                        : "Project"
+                    }
+                    key={project.id}
+                    onClick={e =>
+                      project.detailMode &&
+                      handleClick(project.id, e.clientX, e.clientY)
+                    }
+                  >
                     <div className="Project__Background" />
                     <div className="Project__DetailPanel">
                       <img
@@ -61,21 +72,7 @@ export function Projects({ projectData }: props) {
                         <span className="Project__Tags">
                           {project.tags.join(", ")}
                         </span>
-                        {/* value.join(', ')}
-                      {project.tags.map(tag => (
-                        <span className="Project__Tags" key={tag}>
-                          {tag.join(",")}
-                        </span>
-                      ))} */}
-                        <span
-                          className="Project__Name"
-                          onClick={e =>
-                            project.detailMode &&
-                            handleClick(project.id, e.clientX, e.clientY)
-                          }
-                        >
-                          {project.name}
-                        </span>
+                        <span className="Project__Name">{project.name}</span>
                       </span>
                     </div>
                   </div>
