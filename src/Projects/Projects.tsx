@@ -1,8 +1,9 @@
 import React from "react";
+import * as _ from "lodash";
 import { useHistory } from "react-router-dom";
 
 import images from "../assets/images/projects/*.png";
-
+import projects from "./Projects.json";
 import "./Projects.scss";
 
 interface Project {
@@ -10,16 +11,17 @@ interface Project {
   name: string;
   tags: string[];
   detailMode: boolean;
-  showInLandingPage: boolean;
+  showFeaturedProject: boolean;
   thumbnail: string;
   detailedContent: { type: string; title: string; content: string }[];
 }
 
 interface props {
-  projectData: Project[];
+  showFeaturedProject: boolean;
 }
 
-export function Projects({ projectData }: props) {
+export function Projects({ showFeaturedProject }: props) {
+  const projectData: Project[] = JSON.parse(JSON.stringify(projects));
   const history = useHistory();
   const handleClick = (id, left, top) => {
     // const root = document.getElementById("root");
@@ -40,7 +42,31 @@ export function Projects({ projectData }: props) {
     // }, 1500);
     history.push(`/projects/${id}`);
   };
-
+  const projectRender = project => {
+    return (
+      <div
+        className={
+          project.detailMode ? "Project Project--clickable mb-3" : "Project"
+        }
+        key={project.id}
+        onClick={e =>
+          project.detailMode && handleClick(project.id, e.clientX, e.clientY)
+        }
+      >
+        <div className="Project__Background" />
+        <div className="Project__DetailPanel">
+          <img
+            src={images[project.thumbnail] || undefined}
+            className="Project__Thumbnail img-fluid"
+          />
+          <span className="Project__TitleHolder">
+            <span className="Project__Tags">{project.tags.join(", ")}</span>
+            <span className="Project__Name">{project.name}</span>
+          </span>
+        </div>
+      </div>
+    );
+  };
   return (
     <>
       <div className="row mt-5">
@@ -49,34 +75,11 @@ export function Projects({ projectData }: props) {
           <div className="ProjectWrapper my-5">
             <div className="ProjectContainer d-flex flex-wrap justify-content-between mx-auto ">
               {projectData.map(project => {
-                return project.showInLandingPage ? (
-                  <div
-                    className={
-                      project.detailMode
-                        ? "Project Project--clickable mb-3"
-                        : "Project"
-                    }
-                    key={project.id}
-                    onClick={e =>
-                      project.detailMode &&
-                      handleClick(project.id, e.clientX, e.clientY)
-                    }
-                  >
-                    <div className="Project__Background" />
-                    <div className="Project__DetailPanel">
-                      <img
-                        src={images[project.thumbnail] || undefined}
-                        className="Project__Thumbnail img-fluid"
-                      />
-                      <span className="Project__TitleHolder">
-                        <span className="Project__Tags">
-                          {project.tags.join(", ")}
-                        </span>
-                        <span className="Project__Name">{project.name}</span>
-                      </span>
-                    </div>
-                  </div>
-                ) : null;
+                return showFeaturedProject
+                  ? project.showFeaturedProject
+                    ? projectRender(project)
+                    : null
+                  : projectRender(project);
               })}
             </div>
           </div>

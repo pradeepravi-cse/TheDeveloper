@@ -5,7 +5,7 @@ import { faAt, faMobileAlt } from "@fortawesome/free-solid-svg-icons";
 import { SocialConnect } from "~/SocialConnect/SocialConnect";
 import { IconImage } from "~/Components/IconImage/IconImage";
 import { Projects } from "~/Projects/";
-import projects from "~/Projects.json";
+
 import expertise from "../assets/images/expertise/*.png";
 
 import { Header } from "./Header/Header";
@@ -15,7 +15,6 @@ import "./LandingPage.scss";
 
 export function LandingPage() {
   const images = Array.from(jsonImages);
-  const projectData = Array.from(projects) as any;
 
   return (
     <>
@@ -86,7 +85,7 @@ export function LandingPage() {
             </div>
           </div>
         </div>
-        {projects && <Projects projectData={projectData} />}
+        <Projects showFeaturedProject={true} />
         <div className="row mt-5 pt-5">
           <div className="col">
             <h2 className="Title Title--Centered">Let's Talk</h2>

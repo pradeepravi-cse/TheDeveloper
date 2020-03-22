@@ -3,8 +3,8 @@ import { useParams, useHistory } from "react-router-dom";
 import * as _ from "lodash";
 
 import { NavBar } from "~/NavBar/NavBar";
-import projects from "~/Projects.json";
-import images from "../../assets/images/projects/*.jpg";
+import projects from "./Projects.json";
+import images from "../assets/images/projects/*.jpg";
 
 import "./ProjectDetail.scss";
 interface DetailedContent {
@@ -17,7 +17,7 @@ interface Project {
   name: string;
   tags: string[];
   detailMode: boolean;
-  showInLandingPage: boolean;
+  showFeaturedProject: boolean;
   thumbnail: string;
   detailedContent: DetailedContent[];
 }
