@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-import images from "../../assets/images/projects/*.png";
+import images from "../assets/images/projects/*.png";
 
 import "./Projects.scss";
 

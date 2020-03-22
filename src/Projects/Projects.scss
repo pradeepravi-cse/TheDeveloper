@@ -1,4 +1,4 @@
-@import "../../constants.scss";
+@import "../constants.scss";
 
 .ProjectContainer {
   width: 70%;
@@ -26,7 +26,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: url("../../assets/images/backgroundPattern.png") center
+    background: url("../assets/images/backgroundPattern.png") center
       center/cover;
     mix-blend-mode: multiply;
     z-index: 1;

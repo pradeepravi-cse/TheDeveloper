@@ -4,7 +4,7 @@ import { faAt, faMobileAlt } from "@fortawesome/free-solid-svg-icons";
 
 import { SocialConnect } from "~/SocialConnect/SocialConnect";
 import { IconImage } from "~/Components/IconImage/IconImage";
-import { Projects } from "~/Components/Projects/Projects";
+import { Projects } from "~/Projects/";
 import projects from "~/Projects.json";
 import expertise from "../assets/images/expertise/*.png";
 
