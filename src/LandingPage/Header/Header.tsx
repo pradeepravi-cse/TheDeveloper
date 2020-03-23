@@ -33,7 +33,7 @@ export function Header() {
       <video autoPlay={true} muted={true} loop={true} id="worldvideo">
         <source src={backgroundvideo} type="video/mp4" />
       </video>
-      <NavBar />
+      <NavBar darkmode={true} />
     </div>
   );
 }

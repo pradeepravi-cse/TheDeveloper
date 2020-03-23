@@ -8,26 +8,53 @@ import logos from "../assets/images/*.png";
 import "./NavBar.scss";
 
 interface props {
-  logoDark?: boolean;
+  darkmode?: boolean;
   enableBack?: boolean;
   backCallBack?: () => void;
 }
 
-export function NavBar({ logoDark, enableBack, backCallBack }: props) {
+export function NavBar({ darkmode, enableBack, backCallBack }: props) {
   return (
-    <div className="Navigation align-items-center">
-      {enableBack && (
-        <span onClick={backCallBack} className="Navigatoin__Back mr-3">
-          {<FontAwesomeIcon icon={faArrowLeft} style={{ fontSize: "20px" }} />}
-        </span>
-      )}
-      <Link to="/" className="Navigation__Brand">
-        <img
-          src={logoDark ? logos["logo-dark"] : logos["logo"]}
-          className="img-fluid"
-          alt=""
-        />
-      </Link>
+    <div className="Navigation">
+      <div className="row w-100">
+        <div className="col d-flex align-items-center">
+          {enableBack && (
+            <span onClick={backCallBack} className="Navigatoin__Back mr-3">
+              {
+                <FontAwesomeIcon
+                  icon={faArrowLeft}
+                  style={{ fontSize: "20px" }}
+                />
+              }
+            </span>
+          )}
+          <Link to="/" className="Navigation__Brand">
+            <img
+              src={darkmode ? logos["logo"] : logos["logo-dark"]}
+              className="img-fluid"
+              alt=""
+            />
+          </Link>
+          <div className=" d-flex  w-100 justify-content-end mr-5">
+            <Link
+              to="/"
+              className={
+                darkmode ? "Navigation__Link text-white" : "Navigation__Link"
+              }
+            >
+              Home
+            </Link>
+            <Link
+              to="/Projects/"
+              className={
+                darkmode ? "Navigation__Link text-white" : "Navigation__Link"
+              }
+            >
+              Projects
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

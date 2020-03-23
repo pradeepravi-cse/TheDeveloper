@@ -1,10 +1,12 @@
 import React from "react";
 import * as _ from "lodash";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
+import { NavBar } from "~/NavBar/NavBar";
 import images from "../assets/images/projects/*.png";
 import projects from "./Projects.json";
 import "./Projects.scss";
+import { SocialConnect } from "~/SocialConnect/SocialConnect";
 
 interface Project {
   id: number;
@@ -30,6 +32,12 @@ export function Projects({ showFeaturedProject }: props) {
     "Mobile App": true,
     "Logo Design": true
   });
+  const [isDirect, setIsDirect] = React.useState<boolean>(false);
+  const { pathname } = useLocation();
+
+  React.useEffect(() => {
+    setIsDirect(pathname == "/Projects/");
+  }, []);
 
   const projectData: Project[] = JSON.parse(JSON.stringify(projects));
   const history = useHistory();
@@ -64,24 +72,34 @@ export function Projects({ showFeaturedProject }: props) {
     }
     return (
       <div
-        className={
-          project.detailMode ? "Project Project--clickable mb-3" : "Project"
-        }
+        className={isDirect ? "col-12 col-md-4" : "col-12 col-md-6"}
         key={project.id}
-        onClick={e =>
-          project.detailMode && handleClick(project.id, e.clientX, e.clientY)
-        }
       >
-        <div className="Project__Background" />
-        <div className="Project__DetailPanel">
-          <img
-            src={images[project.thumbnail] || undefined}
-            className="Project__Thumbnail img-fluid"
-          />
-          <span className="Project__TitleHolder">
-            <span className="Project__Tags">{project.tags.join(", ")}</span>
-            <span className="Project__Name">{project.name}</span>
-          </span>
+        <div
+          className={
+            project.detailMode
+              ? isDirect
+                ? "Project Project--clickable Project--compact mb-3"
+                : "Project Project--clickable mb-3"
+              : isDirect
+              ? "Project Project--compact"
+              : "Project mb-3"
+          }
+          onClick={e =>
+            project.detailMode && handleClick(project.id, e.clientX, e.clientY)
+          }
+        >
+          <div className="Project__Background" />
+          <div className="Project__DetailPanel">
+            <img
+              src={images[project.thumbnail] || undefined}
+              className="Project__Thumbnail img-fluid"
+            />
+            <span className="Project__TitleHolder">
+              <span className="Project__Tags">{project.tags.join(", ")}</span>
+              <span className="Project__Name">{project.name}</span>
+            </span>
+          </div>
         </div>
       </div>
     );
@@ -99,7 +117,6 @@ export function Projects({ showFeaturedProject }: props) {
       if (_.every(tags)) {
         _.map(tags, (value, k) => {
           if (k !== key) {
-            console.log(k);
             setTags(t => {
               return { ...t, [k]: !tags[k] };
             });
@@ -115,11 +132,15 @@ export function Projects({ showFeaturedProject }: props) {
 
   return (
     <>
+      <SocialConnect />
       <div className="row mt-5">
         <div className="col">
-          <h2 className="Title Title--Centered">Featured Projects</h2>
+          {isDirect && <NavBar />}
+          <h2 className="Title Title--Centered" hidden={isDirect}>
+            Featured Projects
+          </h2>
           <div className="ProjectWrapper my-5">
-            <div className="ProjectContainer d-flex flex-wrap justify-content-between mx-auto ">
+            <div className="ProjectContainer d-flex flex-wrap mx-auto ">
               <div className="ProjectTags mb-5 mx-auto">
                 <span
                   className={
@@ -147,14 +168,15 @@ export function Projects({ showFeaturedProject }: props) {
                   </span>
                 ))}
               </div>
-
-              {projectData.map(project => {
-                return showFeaturedProject
-                  ? project.showFeaturedProject
-                    ? projectRender(project)
-                    : null
-                  : projectRender(project);
-              })}
+              <div className="row w-100">
+                {projectData.map(project => {
+                  return showFeaturedProject
+                    ? project.showFeaturedProject
+                      ? projectRender(project)
+                      : null
+                    : projectRender(project);
+                })}
+              </div>
             </div>
           </div>
         </div>

@@ -32,13 +32,16 @@
 }
 
 .Project {
-  flex-basis: 49%;
   background: $primary;
+
   height: 350px;
   position: relative;
   &--clickable {
     cursor: pointer;
   }
+  // &--compact {
+  //   width: 30% !important;
+  // }
   &:hover &__Thumbnail {
     transform: scale(1.05);
   }

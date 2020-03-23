@@ -1,5 +1,6 @@
+@import "../constants.scss";
+
 .Navigation {
-  margin: 0 40px;
   display: flex;
   padding: 8px;
   height: 60px;
@@ -9,6 +10,7 @@
   left: 0;
   &__Brand {
     max-height: 50px;
+    margin-left: 40px;
     img {
       max-width: 300px;
       width: auto;
@@ -17,5 +19,13 @@
   &__Back {
     font-size: 20px;
     cursor: pointer;
+  }
+  &__Link {
+    margin-left: 30px;
+    color: $text-primary;
+    &:hover {
+      text-decoration: none;
+      color: $text-primary;
+    }
   }
 }
