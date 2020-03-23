@@ -1,13 +1,5 @@
 @import "../constants.scss";
 
-.ProjectContainer {
-  width: 70%;
-}
-@media (max-width: 780px) {
-  .ProjectContainer {
-    width: 100% !important;
-  }
-}
 .ProjectTags {
   display: flex;
   align-items: center;
@@ -33,15 +25,18 @@
 
 .Project {
   background: $primary;
-
-  height: 350px;
+  max-width: 400px;
+  margin: auto;
+  max-height: 400px;
   position: relative;
+  &:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
   &--clickable {
     cursor: pointer;
   }
-  // &--compact {
-  //   width: 30% !important;
-  // }
   &:hover &__Thumbnail {
     transform: scale(1.05);
   }
@@ -57,11 +52,11 @@
     z-index: 1;
   }
   &__DetailPanel {
-    width: 100%;
-    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    bottom: 0;
+    right: 0;
     z-index: 9;
   }
   &__Thumbnail {

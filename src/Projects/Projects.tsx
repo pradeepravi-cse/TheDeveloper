@@ -7,6 +7,7 @@ import images from "../assets/images/projects/*.png";
 import projects from "./Projects.json";
 import "./Projects.scss";
 import { SocialConnect } from "~/SocialConnect/SocialConnect";
+import { Footer } from "~/Footer/Footer";
 
 interface Project {
   id: number;
@@ -34,32 +35,18 @@ export function Projects({ showFeaturedProject }: props) {
   });
   const [isDirect, setIsDirect] = React.useState<boolean>(false);
   const { pathname } = useLocation();
-
+  const windowWidth = window.innerWidth;
   React.useEffect(() => {
     setIsDirect(pathname == "/Projects/");
   }, []);
 
   const projectData: Project[] = JSON.parse(JSON.stringify(projects));
   const history = useHistory();
-  const handleClick = (id, left, top) => {
-    // const root = document.getElementById("root");
-    // const child = document.getElementById("animateElement");
-    // if (child) {
-    //   root.removeChild(child[0]);
-    // }
-    // const animate = document.createElement("span");
-    // animate.className = "animateElement";
-    // animate.id = "animateElement";
-    // animate.style.top = top + "px";
-    // animate.style.left = left + "px";
-    // root.appendChild(animate);
-    // setTimeout(() => {
-    //   if (child) {
-    //     root.removeChild(child);
-    //   }
-    // }, 1500);
+
+  const handleClick = id => {
     history.push(`/projects/${id}`);
   };
+
   const projectRender = project => {
     let trueNumber = 0;
     _.map(project.tags, tag => {
@@ -67,27 +54,22 @@ export function Projects({ showFeaturedProject }: props) {
         trueNumber += 1;
       }
     });
+
     if (trueNumber == 0) {
       return null;
     }
+
     return (
-      <div
-        className={isDirect ? "col-12 col-md-4" : "col-12 col-md-6"}
-        key={project.id}
-      >
+      <div className="col-12 col-md-3" key={project.id}>
         <div
           className={
             project.detailMode
-              ? isDirect
-                ? "Project Project--clickable Project--compact mb-3"
-                : "Project Project--clickable mb-3"
-              : isDirect
-              ? "Project Project--compact"
+              ? "Project Project--clickable mb-3"
               : "Project mb-3"
           }
-          onClick={e =>
-            project.detailMode && handleClick(project.id, e.clientX, e.clientY)
-          }
+          onClick={e => project.detailMode && handleClick(project.id)}
+          style={!project.detailMode ? { cursor: "not-allowed" } : {}}
+          title={!project.detailMode && "No Project Details Found"}
         >
           <div className="Project__Background" />
           <div className="Project__DetailPanel">
@@ -104,6 +86,7 @@ export function Projects({ showFeaturedProject }: props) {
       </div>
     );
   };
+
   const CheckedAll = _.every(tags);
 
   const toogleFilter = key => {
@@ -139,9 +122,18 @@ export function Projects({ showFeaturedProject }: props) {
           <h2 className="Title Title--Centered" hidden={isDirect}>
             Featured Projects
           </h2>
-          <div className="ProjectWrapper my-5">
-            <div className="ProjectContainer d-flex flex-wrap mx-auto ">
-              <div className="ProjectTags mb-5 mx-auto">
+          <div
+            className="ProjectWrapper my-5"
+            style={windowWidth < 768 && isDirect ? { margin: "0 40px" } : {}}
+          >
+            <div
+              className="ProjectContainer"
+              style={{
+                marginLeft: windowWidth < 768 ? 0 : "50px",
+                marginRight: windowWidth < 768 ? 0 : "60px"
+              }}
+            >
+              <div className="ProjectTags mb-5">
                 <span
                   className={
                     CheckedAll
@@ -168,7 +160,7 @@ export function Projects({ showFeaturedProject }: props) {
                   </span>
                 ))}
               </div>
-              <div className="row w-100">
+              <div className="row">
                 {projectData.map(project => {
                   return showFeaturedProject
                     ? project.showFeaturedProject
@@ -181,6 +173,7 @@ export function Projects({ showFeaturedProject }: props) {
           </div>
         </div>
       </div>
+      {isDirect && <Footer />}
     </>
   );
 }

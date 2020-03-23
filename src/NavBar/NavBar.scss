@@ -11,9 +11,11 @@
   &__Brand {
     max-height: 50px;
     margin-left: 40px;
-    img {
-      max-width: 300px;
-      width: auto;
+    @media (min-width: 768px) {
+      img {
+        max-width: 300px;
+        width: auto;
+      }
     }
   }
   &__Back {

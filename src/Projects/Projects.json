@@ -81,5 +81,60 @@
         "content": "alpha-website-vd"
       }
     ]
+  },
+  {
+    "id": 6,
+    "name": "Analyst Dashboard",
+    "tags": ["Web Design", "SPA", "UI/UX"],
+    "detailMode": true,
+    "showFeaturedProject": true,
+    "thumbnail": "analyst-dashboard",
+    "detailedContent": [
+      {
+        "type": "image",
+        "title": "",
+        "content": "analyst-dashboard-1"
+      },
+      {
+        "type": "image",
+        "title": "",
+        "content": "analyst-dashboard-2"
+      },
+      {
+        "type": "image",
+        "title": "",
+        "content": "analyst-dashboard-3"
+      },
+      {
+        "type": "image",
+        "title": "",
+        "content": "analyst-dashboard-4"
+      },
+      {
+        "type": "image",
+        "title": "",
+        "content": "analyst-dashboard-5"
+      },
+      {
+        "type": "image",
+        "title": "",
+        "content": "analyst-dashboard-6"
+      },
+      {
+        "type": "image",
+        "title": "",
+        "content": "analyst-dashboard-7"
+      },
+      {
+        "type": "image",
+        "title": "",
+        "content": "analyst-dashboard-8"
+      },
+      {
+        "type": "image",
+        "title": "",
+        "content": "analyst-dashboard-9"
+      }
+    ]
   }
 ]

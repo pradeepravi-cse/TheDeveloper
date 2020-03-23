@@ -32,10 +32,22 @@
       }
     }
   }
+  &--Mobile {
+    position: relative;
+    flex-direction: row;
+    display: none;
+    justify-content: center;
+    &__Link {
+      margin: 0px 20px;
+    }
+  }
 }
 
 @media (max-width: 768px) {
   .SocialConnect {
     display: none;
+    &--Mobile {
+      display: flex;
+    }
   }
 }

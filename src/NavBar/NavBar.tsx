@@ -35,7 +35,7 @@ export function NavBar({ darkmode, enableBack, backCallBack }: props) {
               alt=""
             />
           </Link>
-          <div className=" d-flex  w-100 justify-content-end mr-5">
+          <div className=" d-flex  w-100 justify-content-end mr-2">
             <Link
               to="/"
               className={

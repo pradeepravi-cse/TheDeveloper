@@ -40,7 +40,7 @@ const Links = [
   }
 ];
 
-export function SocialConnect() {
+export function SocialConnect({ showOnMobile }: { showOnMobile?: boolean }) {
   const { pathname } = useLocation();
   const [scrollPosition, setScrollPosition] = React.useState(0);
   const windowHeight = window.innerHeight;
@@ -53,7 +53,7 @@ export function SocialConnect() {
     scrollPosition + 300 <= windowHeight && pathname == "/";
 
   return (
-    <div className="SocialConnect">
+    <div className={showOnMobile ? "SocialConnect--Mobile" : "SocialConnect"}>
       {_.map(Links, Link => {
         return (
           <a
@@ -63,6 +63,8 @@ export function SocialConnect() {
             className={
               variationCheck
                 ? "SocialConnect__Link"
+                : showOnMobile
+                ? "SocialConnect--Mobile__Link SocialConnect__Link--colored"
                 : "SocialConnect__Link SocialConnect__Link--colored"
             }
           >

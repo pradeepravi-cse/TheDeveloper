@@ -1,6 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAt, faMobileAlt } from "@fortawesome/free-solid-svg-icons";
 
 import { SocialConnect } from "~/SocialConnect/SocialConnect";
 import { IconImage } from "~/Components/IconImage/IconImage";
@@ -12,6 +10,7 @@ import { Header } from "./Header/Header";
 import jsonImages from "./images.json";
 
 import "./LandingPage.scss";
+import { Footer } from "~/Footer/Footer";
 
 export function LandingPage() {
   const images = Array.from(jsonImages);
@@ -86,15 +85,7 @@ export function LandingPage() {
           </div>
         </div>
         <Projects showFeaturedProject={true} />
-        <div className="row mt-5 pt-5">
-          <div className="col">
-            <h2 className="Title Title--Centered">Let's Talk</h2>
-            <p className="Text Text--Dark Text--Centered AboutText mx-auto">
-              <FontAwesomeIcon icon={faAt} /> pradeepravi.cse@gmail.com <br />{" "}
-              <FontAwesomeIcon icon={faMobileAlt} /> +91 88075 45800
-            </p>
-          </div>
-        </div>
+        <Footer />
       </div>
     </>
   );
