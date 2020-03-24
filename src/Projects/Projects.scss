@@ -120,3 +120,16 @@
     opacity: 0;
   }
 }
+
+.Progress {
+  height: 5px;
+  width: 400px;
+  border-radius: 3px;
+  border: 1px inset $lightest-gray;
+  display: flex;
+  &__Bar {
+    height: 4px;
+    background: $primary;
+    width: 120px;
+  }
+}

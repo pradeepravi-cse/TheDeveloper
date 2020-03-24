@@ -35,8 +35,8 @@ export function ProjectDetail() {
     history.goBack();
   };
   return (
-    <div className="ProjectDetail">
-      <NavBar logoDark={true} enableBack={true} backCallBack={goBack} />
+    <div className="ProjectDetail mt-5">
+      <NavBar enableBack={true} backCallBack={goBack} />
       <div className="row mt-5">
         <div className="col">
           <h1 className="ProjectTitle">{filteredData.name}</h1>

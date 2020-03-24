@@ -1,6 +1,8 @@
 import React from "react";
 import * as _ from "lodash";
 import { useHistory, useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 import { NavBar } from "~/NavBar/NavBar";
 import images from "../assets/images/projects/*.png";
@@ -169,6 +171,24 @@ export function Projects({ showFeaturedProject }: props) {
                     : projectRender(project);
                 })}
               </div>
+              {isDirect && (
+                <div className="row my-5">
+                  <div className="col d-flex flex-column align-items-center justify-content-center my-5">
+                    <FontAwesomeIcon
+                      icon={faSpinner}
+                      spin
+                      className="my-3"
+                      size={"lg"}
+                    />
+                    <span style={{ fontFamily: "Roboto", fontSize: "12px" }}>
+                      More Projects are uploading
+                    </span>
+                    <div className="Progress mt-2">
+                      <div className="Progress__Bar"></div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

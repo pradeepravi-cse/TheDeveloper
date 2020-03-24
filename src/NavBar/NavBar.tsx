@@ -19,7 +19,7 @@ export function NavBar({ darkmode, enableBack, backCallBack }: props) {
       <div className="row w-100">
         <div className="col d-flex align-items-center">
           {enableBack && (
-            <span onClick={backCallBack} className="Navigatoin__Back mr-3">
+            <span onClick={backCallBack} className="Navigation__Back">
               {
                 <FontAwesomeIcon
                   icon={faArrowLeft}
